@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)http://localhost/webtare/yanahisss/index2html.html -->
+<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<script src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="css/materialize.min.css">
+ 	<link rel="stylesheet" href="bootstrap-theme.css">
+ 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	
+<script type="text/javascript">
+
+    function facturar(id_Avaluo) {
+    	var body= {
+			action:'consultar_avaluos_por_id',
+			id_Avaluo: id_Avaluo
+		};
+		var idClienteConsultar = 0;
+		var div = document.getElementById('AvaluoData');
+		var tab = '';
+		var strJson = '{';
+		$.ajax({
+			url:'http://localhost/mtzWS/',
+			type:'POST',
+			data:JSON.stringify(body),
+			contentType:'application/json',
+			dataType:'json',
+			async:false,
+			success:function(results){
+				 var stringDatas = JSON.stringify(results);
+	             var arr = JSON.parse(stringDatas); 
+						   tab += '<p><h4>Este Avaluo se va a facturar:</h4></p><br><table class="table table-hover">'
+						   + '<thead><tr><th>Id Avaluo</th><th>Tipo</th><th>Pago Catastro</th><th>Fecha</th>'
+						   + '<th>Cto Avaluo</th><th>Subtotal</th><th>Total</th></thead><tbody>';
+	                       for(i = 0; i < arr.length; i++){
+                                
+	                        	tab += '<tr>';
+								tab += '<td>' + arr[i].id_Avaluo + '</td>';
+								tab += '<td>' + arr[i].Tipo + '</td>';
+								tab += '<td>' + arr[i].PagoCatastro + '</td>';
+
+								strJson += '"Fecha": "' + arr[i].Fecha; + '",';
+
+								tab += '<td>' + arr[i].Fecha + '</td>';
+
+								tab += '<td>' + arr[i].cto_Avaluo + '</td>';
+								tab += '<td>' + arr[i].Subtotal + '</td>';
+
+								strJson += '"Subtotal": "' + arr[i].Subtotal; + '",';
+
+								tab += '<td>' + arr[i].Total + '</td>';
+
+								strJson += '"Total": "' + arr[i].Total; + '",';
+
+								idClienteConsultar = arr[i].id_Cliente;
+							    
+	                        	tab += '</tr>';
+	                       }
+	                       div.innerHTML = tab;
+	                  }
+		});
+        var body2= {
+			action:'consultar_clientes_por_id',
+			id_Avaluo: idClienteConsultar
+		};
+		$.ajax({
+			url:'http://localhost/mtzWS/',
+			type:'POST',
+			data:JSON.stringify(body2),
+			contentType:'application/json',
+			dataType:'json',
+			async:false,
+			success:function(results){
+				 var stringDatas = JSON.stringify(results);
+	             var arr = JSON.parse(stringDatas); 
+	                       for(i = 0; i < arr.length; i++){
+
+								strJson += '"Subtotal": "' + arr[i].RFC; + '",';
+								strJson += '"Subtotal": "' + arr[i].Nombre; + '",';
+								strJson += '"Subtotal": "' + arr[i].Apellido; + '",';
+								strJson += '"Subtotal": "' + arr[i].Colonia; + '",';
+								strJson += '"Subtotal": "' + arr[i].Municipio; + '",';
+								strJson += '"Subtotal": "' + arr[i].cPostal; + '"}';
+
+
+	                       }
+	                       alert(strJson);
+	                       //div.innerHTML = tab;
+	                  }
+		});
+
+    }
+    
+    function JSONToCSVConvertor(JSONData, ReportTitle, ShowLabel) {
+    //If JSONData is not an object then JSON.parse will parse the JSON string in an Object
+    var arrData = typeof JSONData != 'object' ? JSON.parse(JSONData) : JSONData;
+    
+    var CSV = '';    
+    //Set Report title in first row or line
+    
+    CSV += ReportTitle + '\r\n\n';
+
+    //This condition will generate the Label/Header
+    if (ShowLabel) {
+        var row = "";
+        
+        //This loop will extract the label from 1st index of on array
+        for (var index in arrData[0]) {
+            
+            //Now convert each value to string and comma-seprated
+            row += index + ',';
+        }
+
+        row = row.slice(0, -1);
+        
+        //append Label row with line break
+        CSV += row + '\r\n';
+    }
+    
+    //1st loop is to extract each row
+    for (var i = 0; i < arrData.length; i++) {
+        var row = "";
+        
+        //2nd loop will extract each column and convert it in string comma-seprated
+        for (var index in arrData[i]) {
+            row += '"' + arrData[i][index] + '",';
+        }
+
+        row.slice(0, row.length - 1);
+        
+        //add a line break after each row
+        CSV += row + '\r\n';
+    }
+
+    if (CSV == '') {        
+        alert("Invalid data");
+        return;
+    }   
+    
+    //Generate a file name
+    var fileName = "MyReport_";
+    //this will remove the blank-spaces from the title and replace it with an underscore
+    fileName += ReportTitle.replace(/ /g,"_");   
+    
+    //Initialize file format you want csv or xls
+    var uri = 'data:text/csv;charset=utf-8,' + escape(CSV);
+    
+    // Now the little tricky part.
+    // you can use either>> window.open(uri);
+    // but this will not work in some browsers
+    // or you will not get the correct file extension    
+    
+    //this trick will generate a temp <a /> tag
+    var link = document.createElement("a");    
+    link.href = uri;
+    
+    //set the visibility hidden so it will not effect on your web-layout
+    link.style = "visibility:hidden";
+    link.download = fileName + ".csv";
+    
+    //this part will append the anchor tag and remove it after automatic click
+   
+
+
+    function verDetalles(id_Cliente)
+    {
+    	//alert(id_Cliente);
+    	var body= {
+			action:'consultar_clientes_por_id',
+			id_Cliente: id_Cliente
+		};
+		var tablaCompleta = '';
+		var div = document.getElementById('Mostrar');
+		var tab = '';
+		var body2= {
+			action:'consultar_avaluos'
+		};
+		$.ajax({
+			url:'http://localhost/mtzWS/',
+			type:'POST',
+			data:JSON.stringify(body),
+			contentType:'application/json',
+			dataType:'json',
+			async:false,
+			success:function(results){
+				 var stringDatas = JSON.stringify(results);
+	             var arr = JSON.parse(stringDatas); 
+						   tab += '<table class="table table-hover">'
+						   + '<thead><tr><th>Accion</th><th>RFC</th><th>Nombre</th><th>Apellido</th>'
+						   + '<th>Colonia</th><th>Municipio</th><th>Tenencia</th><th>Reg</th>'
+						   + '<th>Manzana</th><th>Lote</th><th>CP</th><th>Telefono</th><th>Celular</th></tr></thead><tbody>';
+	                       for(i = 0; i < arr.length; i++){
+	                        	tab += '<tr>';
+								tab += '<td>' + '<button class="glyphicon glyphicon-chevron-left" onclick="Clientes();"> Atras </button>' + '</td>';
+								tab += '<td>' + arr[i].RFC + '</td>';
+								tab += '<td>' + arr[i].Nombre + '</td>';
+								tab += '<td>' + arr[i].Apellido + '</td>';
+
+								tab += '<td>' + arr[i].Colonia + '</td>';
+								tab += '<td>' + arr[i].Municipio + '</td>';
+								tab += '<td>' + arr[i].Tenencia + '</td>';
+								tab += '<td>' + arr[i].Reg + '</td>';
+
+								tab += '<td>' + arr[i].Manzana + '</td>';
+								tab += '<td>' + arr[i].Lote + '</td>';
+								tab += '<td>' + arr[i].cPostal + '</td>';
+								tab += '<td>' + arr[i].Telefono + '</td>';
+								tab += '<td>' + arr[i].Celular + '</td>';
+	                        	tab += '</tr>';
+	                       }
+	                       //div.innerHTML = tab;
+	                  }
+		});
+
+		$.ajax({
+			url:'http://localhost/mtzWS/',
+			type:'POST',
+			data:JSON.stringify(body2),
+			contentType:'application/json',
+			dataType:'json',
+			async:false,
+			success:function(results){
+				 var stringDatas = JSON.stringify(results);
+	             var arr = JSON.parse(stringDatas); 
+						   tab += '<p><h4>Los avaluos de este cliente son:</h4></p><br><table class="table table-hover">'
+						   + '<thead><tr><th>Accion</th><th>Tipo</th><th>Pago Catastro</th><th>Fecha</th>'
+						   + '<th>Cto Avaluo</th><th>Subtotal</th><th>Total</th></thead><tbody>';
+	                       for(i = 0; i < arr.length; i++){
+                                if(arr[i].id_Cliente == id_Cliente){
+		                        	tab += '<tr>';
+									tab += '<td>' + '<button class="glyphicon glyphicon-cloud-download" onclick="facturar(' + arr[i].id_Avaluo + ');"> Facturar </button>' + '</td>';
+									tab += '<td>' + arr[i].Tipo + '</td>';
+									tab += '<td>' + arr[i].PagoCatastro + '</td>';
+									tab += '<td>' + arr[i].Fecha + '</td>';
+
+									tab += '<td>' + arr[i].cto_Avaluo + '</td>';
+									tab += '<td>' + arr[i].Subtotal + '</td>';
+									tab += '<td>' + arr[i].Total + '</td>';
+							    }
+
+	                        	tab += '</tr>';
+	                       }
+	                       div.innerHTML = tab;
+	                  }
+		});
+    }
+	function Clientes(){
+		var body= {
+			action:'consultar_clientes'
+		};
+		var div = document.getElementById('Mostrar');
+		var tab = '';
+		$.ajax({
+			url:'http://localhost/mtzWS/',
+			type:'POST',
+			data:JSON.stringify(body),
+			contentType:'application/json',
+			dataType:'json',
+			async:false,
+			success:function(results){
+				 var stringDatas = JSON.stringify(results);
+	             var arr = JSON.parse(stringDatas); 
+						   tab += '<table class="table table-hover">'
+						   + '<thead><tr><th>Accion</th><th>RFC</th><th>Nombre</th><th>Apellido</th>'
+						   + '<th>Colonia</th><th>Municipio</th><th>Tenencia</th><th>Reg</th>'
+						   + '<th>Manzana</th><th>Lote</th><th>CP</th><th>Telefono</th><th>Celular</th></tr></thead><tbody>';
+	                       for(i = 0; i < arr.length; i++){
+	                        	tab += '<tr>';
+								tab += '<td>' + '<button class="glyphicon glyphicon-zoom-in" onclick="verDetalles('+ arr[i].id_Cliente + ');"> Detalles </button>' + '</td>';
+								tab += '<td>' + arr[i].RFC + '</td>';
+								tab += '<td>' + arr[i].Nombre + '</td>';
+								tab += '<td>' + arr[i].Apellido + '</td>';
+
+								tab += '<td>' + arr[i].Colonia + '</td>';
+								tab += '<td>' + arr[i].Municipio + '</td>';
+								tab += '<td>' + arr[i].Tenencia + '</td>';
+								tab += '<td>' + arr[i].Reg + '</td>';
+
+								tab += '<td>' + arr[i].Manzana + '</td>';
+								tab += '<td>' + arr[i].Lote + '</td>';
+								tab += '<td>' + arr[i].cPostal + '</td>';
+								tab += '<td>' + arr[i].Telefono + '</td>';
+								tab += '<td>' + arr[i].Celular + '</td>';
+	                        	tab += '</tr>';
+	                       }
+	                       div.innerHTML = tab;
+	                  }
+		});
+	}
+	
+	</script>
+	<title></title>
+</head>
+<body class="container" waid71fa0d88-5390-4b5b-a2f4-e45fa93d85e2="SA password protect entry checker">
+	<h3 align="center"> Mtz Ingenieros</h3>
+
+	<button class="glyphicon glyphicon-user" onclick="Clientes();"> Mostrar Clientes</button>
+
+	<div id="Mostrar">
+		
+	</div>
+
+	<div id="AvaluoData">
+	</div>
+	
+ 	
+ 	<br><br>
+    <p>Software desarrollado por hermanos Monica y Marco Abarca</p>
+	<script src="./index/jquery-1.12.0.js.descarga" type="text/javascript"></script>
+    <script src="./index/jquery-1.12.0.min.js.descarga" type="text/javascript"></script>
+    <script src="./index/bootstrap.js.descarga" type="text/javascript"></script>
+    <script src="./index/bootstrap.min.js(1).descarga" type="text/javascript"></script>
+	
+</body>
+</html>

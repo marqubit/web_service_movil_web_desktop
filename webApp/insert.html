@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<<script src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="css/materialize.min.css">
+ 	<link rel="stylesheet" href="bootstrap-theme.css">
+ 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script type="text/javascript">
+	function Agregar(){
+	var Id_genero = document.getElementById('Id_genero');
+	var genero = document.getElementById('genero');
+	var referencia = document.getElementById('referencia');
+		var body= {
+			action:'insertGender',
+			Id_genero:$("#Id_genero").val(),
+			genero:$("#genero").val(),
+			referencia:$("#referencia").val(),
+			console.alert("Ready");
+		};
+		//var div = document.getElementById('Mostrar');
+		console.log(body);
+		$.ajax({
+			url:'http://localhost/servicioWeb/',
+			type:'POST',
+			data:JSON.stringify(body),
+			contentType:'application/json',
+			dataType:'json',
+			async:false,
+			success:function(results){
+				
+	                  }
+				});	
+		}
+		
+		
+	
+	</script>
+	<title></title>
+</head>
+<body class="container">
+	<form class = "form-horizontal" role="form">
+		<div class="form-group">
+			<h3 align=center>Registry one Cancion</h3>
+				<label for="Nombre" class="col-lg-2 control-label">Id_genero</label>
+					<div class="col-lg-10">
+						<input type="text" class="form-control" id = "Id_genero" placeholder="id_genero"/></br>
+					</div>
+			</div>
+			<div class="form-group">
+				<label for="Genero" class="col-lg-2 control-label">Genero</label>
+					<div class="col-lg-10">
+						<input type="text" class="form-control" id ="genero" placeholder="genero"></br>
+					</div>
+			</div>
+			<div class="form-group">
+				<label for="Referencia" class="col-lg-2 control-label">Referencia </label>
+					<div class="col-lg-10">
+						<input type="text" class="form-control" id ="referencia" placeholder="referencias"/></br>
+					</div>
+			</div>
+			<div class="form-group">
+				<button class="glyphicon glyphicon-ok" style="color:orange" onclick="Agregar();">Agregar</button>
+					<div class="col-lg-10">
+					</div>
+			</div>
+	<div align=center>
+	<form class="form-horizontal">
+ 	<!--<input type="text" name="nombre" id="nombre"  class="form-control">
+ 	<input type="text" name="comentario" id="comentario" value="" class="form-control" >!-->
+	</form></br></br>
+	
+	<li><a href="http://localhost/webtare/yanahisss/index.html"><i class="glyphicon glyphicon-arrow-left" style="color:green" ></i> Back</a></li>
+	
+	<!--<button class="btn btn-defaul btn-success" onclick="guardar();" >Agregar</button>
+	<button class="btn btn-defaul btn-success" onclick="actualizar();">Actualizar</button> 
+	<!--<button class="btn btn-defaul btn-success" onclick="eliminar(\''+e.key+\'')"> Eliminar</button>-->
+	<div id="Mostrar">	
+	</div>
+ </div></br></br>
+		<script src="js/jquery-1.12.0.js" type="text/javascript"></script>
+        <script src="js/jquery-1.12.0.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap.js" type="text/javascript"></script>
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>	
+</body>
+</html>

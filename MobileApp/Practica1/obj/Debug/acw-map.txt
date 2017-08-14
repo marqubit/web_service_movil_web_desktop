@@ -1,0 +1,4 @@
+Practica1.MainActivity, Practica1;md58c289a96307691bf1cda2260c4f09a0b.MainActivity
+Practica1.MainActivity, Practica1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md58c289a96307691bf1cda2260c4f09a0b.MainActivity
+Practica1.MainActivity;md58c289a96307691bf1cda2260c4f09a0b.MainActivity
+practica1.MainActivity;md58c289a96307691bf1cda2260c4f09a0b.MainActivity

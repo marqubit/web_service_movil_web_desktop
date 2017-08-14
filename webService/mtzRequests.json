@@ -1,0 +1,119 @@
+//C (Crear)
+{
+    "action": "agregar_cliente",
+    "RFC": "DATAFROMAPI",
+    "nombre": "DATAFROMAPI",
+    "apellido": "DATAFROMAPI",
+    "colonia": "DATAFROMAPI",
+    "municipio": "DATAFROMAPI",
+    "tenencia": "DATAFROMAPI",
+    "reg": "DATAFROMAPI",
+    "manzana": "DATAFROMAPI",
+    "lote": "DATAFROMAPI",
+    "cPostal": 666,
+    "telefono": "DATAFROMAPI",
+    "celular": "DATAFROMAPI"
+}
+{
+    "action": "agregar_avaluo",
+    "tipo": "DATAFROMAPI",
+    "pago_catastro": 666,
+    "fecha": "2017-07-27",
+    "cto_Avaluo": 666,
+    "subtotal": 666,
+    "total": 666,
+    "id_Cliente": 2
+}
+{
+    "action": "agregar_concepto",
+    "motivo": "DATAFROMAPI",
+    "ubicacion_predio": "DATAFROMAPI",
+    "localidad": "DATAFROMAPI",
+    "adquiriente": "DATAFROMAPI",
+    "ubicacion": "DATAFROMAPI",
+    "domicilio_notificar": "DATAFROMAPI",
+    "localidad_notificar": "DATAFROMAPI",
+    "no_cuenta": 666,
+    "enajenante": "DATAFROMAPI",
+    "fecha": "2017-07-27",
+    "id_Avaluo": 3
+}
+//NOTA ANTES DE IR AL BAÑO: Probar las ediciones y eliminaciones y corregir el agregar e insertar  clientes y conceptos del api test
+//R (Lectura)
+{
+    "action": "consultar_clientes"
+}
+{
+    "action": "consultar_clientes_por_id",
+    "id_Cliente": 1
+}
+{
+    "action": "consultar_avaluos"
+}
+{
+    "action": "consultar_avaluos_por_id",
+    "id_Avaluo": 1
+}
+{
+    "action": "consultar_conceptos"
+}
+{
+    "action": "consultar_conceptos_por_id",
+    "id_Concepto": 1
+}
+//U (Actualizar)
+{
+    "action": "editar_cliente",
+    "id_Cliente": 2,
+    "RFC": "EDITED_DATAFROMAPI",
+    "nombre": "EDITED_DATAFROMAPI",
+    "apellido": "EDITED_DATAFROMAPI",
+    "colonia": "EDITED_DATAFROMAPI",
+    "municipio": "EDITED_DATAFROMAPI",
+    "tenencia": "EDITED_DATAFROMAPI",
+    "reg": "EDITED_DATAFROMAPI",
+    "manzana": "EDITED_DATAFROMAPI",
+    "lote": "EDITED_DATAFROMAPI",
+    "cPostal": 555,
+    "telefono": "EDITED_DATAFROMAPI",
+    "celular": "EDITED_DATAFROMAPI"
+}
+{
+    "action": "editar_avaluo",
+    "id_Avaluo": 3,
+    "tipo": "EDITED_DATAFROMAPI",
+    "pago_catastro": 555,
+    "fecha": "2017-07-27",
+    "cto_Avaluo": 555,
+    "subtotal": 555,
+    "total": 555,
+    "id_Cliente": 1
+}
+{
+    "action": "editar_concepto",
+    "id_Concepto": 2,
+    "motivo": "EDITED_DATAFROMAPI",
+    "ubicacion_predio": "EDITED_DATAFROMAPI",
+    "localidad": "EDITED_DATAFROMAPI",
+    "adquiriente": "EDITED_DATAFROMAPI",
+    "ubicacion": "EDITED_DATAFROMAPI",
+    "domicilio_notificar": "EDITED_DATAFROMAPI",
+    "localidad_notificar": "EDITED_DATAFROMAPI",
+    "no_cuenta": 555,
+    "enajenante": "EDITED_DATAFROMAPI",
+    "fecha": "2017-07-27",
+    "id_Avaluo": 1 
+}
+//D (Borrar)
+{
+    "action": "eliminar_cliente",
+    "id_Cliente": 2
+}
+{
+    "action": "eliminar_avaluo",
+    "id_Avaluo": 3
+}
+{
+    "action": "eliminar_concepto",
+    "id_Concepto": 3
+}

@@ -1,0 +1,48 @@
+c:\users\monic\onedrive\documents\visual studio 2017\Projects\Avaluos\Avaluos\bin\Debug\Avaluos.exe.config
+c:\users\monic\onedrive\documents\visual studio 2017\Projects\Avaluos\Avaluos\bin\Debug\Avaluos.exe
+c:\users\monic\onedrive\documents\visual studio 2017\Projects\Avaluos\Avaluos\bin\Debug\Avaluos.pdb
+c:\users\monic\onedrive\documents\visual studio 2017\Projects\Avaluos\Avaluos\bin\Debug\MetroFramework.Design.dll
+c:\users\monic\onedrive\documents\visual studio 2017\Projects\Avaluos\Avaluos\bin\Debug\MetroFramework.dll
+c:\users\monic\onedrive\documents\visual studio 2017\Projects\Avaluos\Avaluos\bin\Debug\MetroFramework.Fonts.dll
+c:\users\monic\onedrive\documents\visual studio 2017\Projects\Avaluos\Avaluos\bin\Debug\MetroFramework.pdb
+c:\users\monic\onedrive\documents\visual studio 2017\Projects\Avaluos\Avaluos\bin\Debug\MetroFramework.Design.pdb
+c:\users\monic\onedrive\documents\visual studio 2017\Projects\Avaluos\Avaluos\bin\Debug\MetroFramework.Fonts.pdb
+c:\users\monic\onedrive\documents\visual studio 2017\Projects\Avaluos\Avaluos\obj\Debug\Avaluos.csprojResolveAssemblyReference.cache
+c:\users\monic\onedrive\documents\visual studio 2017\Projects\Avaluos\Avaluos\obj\Debug\Avaluos.Inicio.resources
+c:\users\monic\onedrive\documents\visual studio 2017\Projects\Avaluos\Avaluos\obj\Debug\Avaluos.Properties.Resources.resources
+c:\users\monic\onedrive\documents\visual studio 2017\Projects\Avaluos\Avaluos\obj\Debug\Avaluos.csproj.GenerateResource.Cache
+c:\users\monic\onedrive\documents\visual studio 2017\Projects\Avaluos\Avaluos\obj\Debug\Avaluos.exe
+c:\users\monic\onedrive\documents\visual studio 2017\Projects\Avaluos\Avaluos\obj\Debug\Avaluos.pdb
+c:\users\monic\onedrive\documents\visual studio 2017\Projects\Avaluos\Avaluos\obj\Debug\Avaluos.Clientes.resources
+c:\users\monic\onedrive\documents\visual studio 2017\Projects\Avaluos\Avaluos\obj\Debug\Avaluos.EditarCliente.resources
+C:\Users\monic\OneDrive\Documents\Visual Studio 2017\Projects\Avaluos\Avaluos\obj\Debug\Avaluos.AgregarAvaluo.resources
+C:\Users\monic\OneDrive\Documents\Visual Studio 2017\Projects\Avaluos\Avaluos\obj\Debug\Avaluos.AgregarCliente.resources
+C:\Users\monic\OneDrive\Documents\Visual Studio 2017\Projects\Avaluos\Avaluos\obj\Debug\Avaluos.Avaluos.resources
+C:\Users\monic\OneDrive\Documents\Visual Studio 2017\Projects\Avaluos\Avaluos\obj\Debug\Avaluos.AgregarConcepto.resources
+C:\Users\monic\OneDrive\Documents\Visual Studio 2017\Projects\Avaluos\Avaluos\obj\Debug\Avaluos.Concepto.resources
+C:\Users\monic\OneDrive\Documents\Visual Studio 2017\Projects\Avaluos\Avaluos\obj\Debug\Avaluos.EditarAvaluo.resources
+C:\Users\monic\OneDrive\Documents\Visual Studio 2017\Projects\Avaluos\Avaluos\obj\Debug\Avaluos.editarConcepto.resources
+C:\Users\monic\Documents\9Cuatrimestre\ProyectoYanai\Avaluos\Avaluos\bin\Debug\Avaluos.exe.config
+C:\Users\monic\Documents\9Cuatrimestre\ProyectoYanai\Avaluos\Avaluos\bin\Debug\Avaluos.exe
+C:\Users\monic\Documents\9Cuatrimestre\ProyectoYanai\Avaluos\Avaluos\bin\Debug\Avaluos.pdb
+C:\Users\monic\Documents\9Cuatrimestre\ProyectoYanai\Avaluos\Avaluos\bin\Debug\MetroFramework.Design.dll
+C:\Users\monic\Documents\9Cuatrimestre\ProyectoYanai\Avaluos\Avaluos\bin\Debug\MetroFramework.dll
+C:\Users\monic\Documents\9Cuatrimestre\ProyectoYanai\Avaluos\Avaluos\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\monic\Documents\9Cuatrimestre\ProyectoYanai\Avaluos\Avaluos\bin\Debug\MetroFramework.pdb
+C:\Users\monic\Documents\9Cuatrimestre\ProyectoYanai\Avaluos\Avaluos\bin\Debug\MetroFramework.Design.pdb
+C:\Users\monic\Documents\9Cuatrimestre\ProyectoYanai\Avaluos\Avaluos\bin\Debug\MetroFramework.Fonts.pdb
+C:\Users\monic\Documents\9Cuatrimestre\ProyectoYanai\Avaluos\Avaluos\obj\Debug\Avaluos.csprojResolveAssemblyReference.cache
+C:\Users\monic\Documents\9Cuatrimestre\ProyectoYanai\Avaluos\Avaluos\obj\Debug\Avaluos.AgregarAvaluo.resources
+C:\Users\monic\Documents\9Cuatrimestre\ProyectoYanai\Avaluos\Avaluos\obj\Debug\Avaluos.AgregarCliente.resources
+C:\Users\monic\Documents\9Cuatrimestre\ProyectoYanai\Avaluos\Avaluos\obj\Debug\Avaluos.AgregarConcepto.resources
+C:\Users\monic\Documents\9Cuatrimestre\ProyectoYanai\Avaluos\Avaluos\obj\Debug\Avaluos.Avaluos.resources
+C:\Users\monic\Documents\9Cuatrimestre\ProyectoYanai\Avaluos\Avaluos\obj\Debug\Avaluos.Clientes.resources
+C:\Users\monic\Documents\9Cuatrimestre\ProyectoYanai\Avaluos\Avaluos\obj\Debug\Avaluos.Concepto.resources
+C:\Users\monic\Documents\9Cuatrimestre\ProyectoYanai\Avaluos\Avaluos\obj\Debug\Avaluos.EditarAvaluo.resources
+C:\Users\monic\Documents\9Cuatrimestre\ProyectoYanai\Avaluos\Avaluos\obj\Debug\Avaluos.EditarCliente.resources
+C:\Users\monic\Documents\9Cuatrimestre\ProyectoYanai\Avaluos\Avaluos\obj\Debug\Avaluos.editarConcepto.resources
+C:\Users\monic\Documents\9Cuatrimestre\ProyectoYanai\Avaluos\Avaluos\obj\Debug\Avaluos.Inicio.resources
+C:\Users\monic\Documents\9Cuatrimestre\ProyectoYanai\Avaluos\Avaluos\obj\Debug\Avaluos.Properties.Resources.resources
+C:\Users\monic\Documents\9Cuatrimestre\ProyectoYanai\Avaluos\Avaluos\obj\Debug\Avaluos.csproj.GenerateResource.Cache
+C:\Users\monic\Documents\9Cuatrimestre\ProyectoYanai\Avaluos\Avaluos\obj\Debug\Avaluos.exe
+C:\Users\monic\Documents\9Cuatrimestre\ProyectoYanai\Avaluos\Avaluos\obj\Debug\Avaluos.pdb
